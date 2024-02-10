@@ -11,6 +11,7 @@ const modules = import.meta.glob('./modules/**/*.ts', { eager: true });
 const routeModuleList: AppRouteModule[] = [];
 
 // 加入到路由集合中
+console.log('===in routes index =======');
 Object.keys(modules).forEach((key) => {
   const mod = (modules as Recordable)[key].default || {};
   const modList = Array.isArray(mod) ? [...mod] : [mod];

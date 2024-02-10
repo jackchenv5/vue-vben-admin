@@ -15,9 +15,9 @@ const emitter = mitt<{
 let lastChangeTab: RouteLocationNormalized;
 
 export function setRouteChange(lastChangeRoute: RouteLocationNormalized) {
-  const r = getRawRoute(lastChangeRoute);
-  emitter.emit(key, r);
-  lastChangeTab = r;
+  const r = getRawRoute(lastChangeRoute); //获取适配的页面,matched里面放纯路由信息，其他保持当前路由一致
+  emitter.emit(key, r); //注册emitter 事件
+  lastChangeTab = r; //最近一次变化的页面？
 }
 
 export function listenerRouteChange(
