@@ -18,6 +18,8 @@ const whitePathList: PageEnum[] = [LOGIN_PATH];
 export function createPermissionGuard(router: Router) {
   const userStore = useUserStoreWithOut();
   const permissionStore = usePermissionStoreWithOut();
+  console.log('==userStore', userStore);
+  console.log('===permissionStore', permissionStore);
   router.beforeEach(async (to, from, next) => {
     if (
       from.path === ROOT_PATH &&
@@ -32,6 +34,8 @@ export function createPermissionGuard(router: Router) {
     const token = userStore.getToken;
 
     // Whitelist can be directly entered
+    console.log('whitepathlist==', whitePathList);
+    console.log('to.path====', to);
     if (whitePathList.includes(to.path as PageEnum)) {
       if (to.path === LOGIN_PATH && token) {
         const isSessionTimeout = userStore.getSessionTimeout;
@@ -97,6 +101,7 @@ export function createPermissionGuard(router: Router) {
     }
 
     const routes = await permissionStore.buildRoutesAction();
+    console.log('routes=after build routers==', routes);
 
     routes.forEach((route) => {
       router.addRoute(route as unknown as RouteRecordRaw);
