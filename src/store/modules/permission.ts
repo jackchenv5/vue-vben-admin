@@ -118,6 +118,8 @@ export const usePermissionStore = defineStore({
       const roleList = toRaw(userStore.getRoleList) || [];
       const { permissionMode = projectSetting.permissionMode } = appStore.getProjectConfig;
 
+      console.log('======projectSetting', projectSetting);
+      console.log('===========roleList', roleList);
       // 路由过滤器 在 函数filter 作为回调传入遍历使用
       const routeFilter = (route: AppRouteRecordRaw) => {
         const { meta } = route;
@@ -173,6 +175,8 @@ export const usePermissionStore = defineStore({
         case PermissionModeEnum.ROLE:
           // 对非一级路由进行过滤
           routes = filter(asyncRoutes, routeFilter);
+          console.log('====aysncRoutes', asyncRoutes);
+          console.log('filter routes====', routes);
           // 对一级路由根据角色权限过滤
           routes = routes.filter(routeFilter);
           // Convert multi-level routing to level 2 routing
@@ -185,11 +189,15 @@ export const usePermissionStore = defineStore({
           // 对非一级路由进行过滤
           routes = filter(asyncRoutes, routeFilter);
           // 对一级路由再次根据角色权限过滤
+          console.log('====aysncRoutes', asyncRoutes);
+          console.log('filter routes====', routes);
           routes = routes.filter(routeFilter);
           // 将路由转换成菜单
           const menuList = transformRouteToMenu(routes, true);
+          console.log('menuList=====>', menuList);
           // 移除掉 ignoreRoute: true 的路由 非一级路由
           routes = filter(routes, routeRemoveIgnoreFilter);
+          console.log('ignoreRoute====>', routes);
           // 移除掉 ignoreRoute: true 的路由 一级路由；
           routes = routes.filter(routeRemoveIgnoreFilter);
           // 对菜单进行排序
@@ -203,6 +211,7 @@ export const usePermissionStore = defineStore({
           // Convert multi-level routing to level 2 routing
           // 将多级路由转换为 2 级路由
           routes = flatMultiLevelRoutes(routes);
+          console.log('2级路由', routes);
           break;
 
         //  If you are sure that you do not need to do background dynamic permissions, please comment the entire judgment below
