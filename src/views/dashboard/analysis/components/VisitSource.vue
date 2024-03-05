@@ -1,5 +1,5 @@
 <template>
-  <Card title="访问来源" :loading="loading">
+  <Card title="重点缺陷分布" :loading="loading">
     <div ref="chartRef" :style="{ width, height }"></div>
   </Card>
 </template>
@@ -39,7 +39,7 @@
         series: [
           {
             color: ['#5ab1ef', '#b6a2de', '#67e0e3', '#2ec7c9'],
-            name: '访问来源',
+            name: '重点缺陷分布',
             type: 'pie',
             radius: ['40%', '70%'],
             avoidLabelOverlap: false,
@@ -63,9 +63,9 @@
               show: false,
             },
             data: [
-              { value: 1048, name: '搜索引擎' },
-              { value: 735, name: '直接访问' },
-              { value: 580, name: '邮件营销' },
+              { value: 1048, name: '阻塞缺陷' },
+              { value: 735, name: '不易重现缺陷' },
+              { value: 580, name: '严重缺陷数量' },
               { value: 484, name: '联盟广告' },
             ],
             animationType: 'scale',

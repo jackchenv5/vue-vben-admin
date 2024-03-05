@@ -1,5 +1,5 @@
 <template>
-  <Card title="成交占比" :loading="loading">
+  <Card title="缺陷发现分布" :loading="loading">
     <div ref="chartRef" :style="{ width, height }"></div>
   </Card>
 </template>
@@ -36,16 +36,17 @@
 
         series: [
           {
-            name: '成交占比',
+            name: '缺陷发现分布',
             type: 'pie',
             radius: '80%',
             center: ['50%', '50%'],
             color: ['#5ab1ef', '#b6a2de', '#67e0e3', '#2ec7c9'],
             data: [
-              { value: 500, name: '电子产品' },
-              { value: 310, name: '服装' },
-              { value: 274, name: '化妆品' },
-              { value: 400, name: '家居' },
+              { value: 500, name: '用例发现' },
+              { value: 310, name: '自动化发现' },
+              { value: 274, name: '探索发现' },
+              { value: 174, name: '测试方案发现' },
+              { value: 140, name: '专项测试发现' },
             ].sort(function (a, b) {
               return a.value - b.value;
             }),

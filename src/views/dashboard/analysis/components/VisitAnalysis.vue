@@ -26,7 +26,7 @@
       xAxis: {
         type: 'category',
         boundaryGap: false,
-        data: [...new Array(18)].map((_item, index) => `${index + 6}:00`),
+        data: [...new Array(18)].map((_item, index) => `${index + 1}周`),
         splitLine: {
           show: true,
           lineStyle: {
@@ -58,6 +58,7 @@
       grid: { left: '1%', right: '1%', top: '2  %', bottom: 0, containLabel: true },
       series: [
         {
+          name: '缺陷发现数目',
           smooth: true,
           data: [
             111, 222, 4000, 18000, 33333, 55555, 66666, 33333, 14000, 36000, 66666, 44444, 22222,
@@ -70,6 +71,7 @@
           },
         },
         {
+          name: '缺陷解决数目',
           smooth: true,
           data: [
             33, 66, 88, 333, 3333, 5000, 18000, 3000, 1200, 13000, 22000, 11000, 2221, 1201, 390,
