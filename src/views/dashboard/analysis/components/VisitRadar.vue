@@ -1,5 +1,5 @@
 <template>
-  <Card title="转化率" :loading="loading">
+  <Card title="项目成员能力图" :loading="loading">
     <div ref="chartRef" :style="{ width, height }"></div>
   </Card>
 </template>
@@ -31,7 +31,7 @@
       setOptions({
         legend: {
           bottom: 0,
-          data: ['访问', '购买'],
+          data: ['效率组', '产品组'],
         },
         tooltip: {},
         radar: {
@@ -39,23 +39,23 @@
           splitNumber: 8,
           indicator: [
             {
-              name: '电脑',
+              name: '缺陷修复效率',
             },
             {
-              name: '充电器',
+              name: '缺陷发现率',
             },
             {
-              name: '耳机',
+              name: 'reopen率',
             },
             {
-              name: '手机',
+              name: '疑难缺陷处理效率',
             },
             {
-              name: 'Ipad',
+              name: '遗留缺陷数目率',
             },
-            {
-              name: '耳机',
-            },
+            // {
+            //   name: '耳机',
+            // },
           ],
         },
         series: [
@@ -72,14 +72,14 @@
             data: [
               {
                 value: [90, 50, 86, 40, 50, 20],
-                name: '访问',
+                name: '工具组',
                 itemStyle: {
                   color: '#b6a2de',
                 },
               },
               {
                 value: [70, 75, 70, 76, 20, 85],
-                name: '购买',
+                name: '测试组',
                 itemStyle: {
                   color: '#5ab1ef',
                 },

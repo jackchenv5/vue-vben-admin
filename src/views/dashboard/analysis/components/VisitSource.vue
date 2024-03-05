@@ -66,7 +66,7 @@
               { value: 1048, name: '阻塞缺陷' },
               { value: 735, name: '不易重现缺陷' },
               { value: 580, name: '严重缺陷数量' },
-              { value: 484, name: '联盟广告' },
+              { value: 484, name: '攻关缺陷' },
             ],
             animationType: 'scale',
             animationEasing: 'exponentialInOut',
