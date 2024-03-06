@@ -3,7 +3,7 @@ import antdLocale from 'ant-design-vue/es/locale/zh_CN';
 import { deepMerge } from '@/utils';
 
 const modules = import.meta.glob('./zh-CN/**/*.{json,ts,js}', { eager: true });
-
+console.log('==============modules', modules);
 export default {
   message: {
     ...genMessage(modules as Recordable<Recordable>, 'zh-CN'),

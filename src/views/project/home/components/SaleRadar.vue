@@ -1,5 +1,5 @@
 <template>
-  <Card title="项目成员能力图" :loading="loading">
+  <Card title="销售统计" :loading="loading">
     <div ref="chartRef" :style="{ width, height }"></div>
   </Card>
 </template>
@@ -16,12 +16,12 @@
     },
     height: {
       type: String as PropType<string>,
-      default: '300px',
+      default: '400px',
     },
   });
+
   const chartRef = ref<HTMLDivElement | null>(null);
   const { setOptions } = useECharts(chartRef as Ref<HTMLDivElement>);
-
   watch(
     () => props.loading,
     () => {
@@ -31,7 +31,7 @@
       setOptions({
         legend: {
           bottom: 0,
-          data: ['效率组', '工具组'],
+          data: ['Visits', 'Sales'],
         },
         tooltip: {},
         radar: {
@@ -39,23 +39,23 @@
           splitNumber: 8,
           indicator: [
             {
-              name: '缺陷修复效率',
+              name: '2017',
             },
             {
-              name: '缺陷发现率',
+              name: '2017',
             },
             {
-              name: 'reopen率',
+              name: '2018',
             },
             {
-              name: '疑难缺陷处理效率',
+              name: '2019',
             },
             {
-              name: '遗留缺陷数目率',
+              name: '2020',
             },
-            // {
-            //   name: '耳机',
-            // },
+            {
+              name: '2021',
+            },
           ],
         },
         series: [
@@ -72,16 +72,16 @@
             data: [
               {
                 value: [90, 50, 86, 40, 50, 20],
-                name: '效率组',
+                name: 'Visits',
                 itemStyle: {
                   color: '#b6a2de',
                 },
               },
               {
                 value: [70, 75, 70, 76, 20, 85],
-                name: '工具组',
+                name: 'Sales',
                 itemStyle: {
-                  color: '#5ab1ef',
+                  color: '#67e0e3',
                 },
               },
             ],
