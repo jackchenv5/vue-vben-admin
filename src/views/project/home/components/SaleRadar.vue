@@ -1,5 +1,5 @@
 <template>
-  <Card title="销售统计" :loading="loading">
+  <Card title="关注项目对比" :loading="loading">
     <div ref="chartRef" :style="{ width, height }"></div>
   </Card>
 </template>
@@ -31,7 +31,7 @@
       setOptions({
         legend: {
           bottom: 0,
-          data: ['Visits', 'Sales'],
+          data: ['项目一', '项目二'],
         },
         tooltip: {},
         radar: {
@@ -39,22 +39,22 @@
           splitNumber: 8,
           indicator: [
             {
-              name: '2017',
+              name: '总预算',
             },
             {
-              name: '2017',
+              name: '人力执行',
             },
             {
-              name: '2018',
+              name: '非人力执行',
             },
             {
-              name: '2019',
+              name: '总执行',
             },
             {
-              name: '2020',
+              name: '科目费用',
             },
             {
-              name: '2021',
+              name: '研发样机',
             },
           ],
         },
@@ -71,15 +71,15 @@
             },
             data: [
               {
-                value: [90, 50, 86, 40, 50, 20],
-                name: 'Visits',
+                value: [120, 50, 86, 40, 50, 20],
+                name: '项目一',
                 itemStyle: {
                   color: '#b6a2de',
                 },
               },
               {
-                value: [70, 75, 70, 76, 20, 85],
-                name: 'Sales',
+                value: [120, 75, 70, 76, 20, 85],
+                name: '项目二',
                 itemStyle: {
                   color: '#67e0e3',
                 },
