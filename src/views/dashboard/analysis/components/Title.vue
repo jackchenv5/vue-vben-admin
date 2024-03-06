@@ -1,6 +1,6 @@
 <template>
   <div class="lg:flex">
-    <Avatar :src="userinfo.avatar || headerImg" :size="72" class="!mx-auto !block" />
+    <Avatar :src="userinfo.avatar || headerImg" :size="60" class="!mx-auto !block" />
     <div class="md:ml-6 flex flex-col justify-center md:mt-0 mt-2">
       <h1 class="md:text-lg text-md">当前项目： 缺陷分析测试项目</h1>
       <span class="text-secondary">
@@ -28,7 +28,7 @@
   import { computed } from 'vue';
   import { Avatar } from 'ant-design-vue';
   import { useUserStore } from '@/store/modules/user';
-  import headerImg from '@/assets/images/header.jpg';
+  import headerImg from '@/assets/images/m.jpg';
 
   const userStore = useUserStore();
   const userinfo = computed(() => userStore.getUserInfo);
