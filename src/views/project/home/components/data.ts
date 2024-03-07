@@ -56,19 +56,19 @@ export const navItems: NavItem[] = [
 export const dynamicInfoItems: DynamicInfoItem[] = [
   {
     avatar: 'dynamic-avatar-1|svg',
-    name: '威廉',
+    name: '张涛',
     date: '刚刚',
     desc: `在 <a>产品部</a> 创建了项目 <a>测试项目A</a>`,
   },
   {
     avatar: 'dynamic-avatar-2|svg',
-    name: '艾文',
+    name: '陈成',
     date: '1个小时前',
     desc: `关注了 <a>测试项目A</a> `,
   },
   {
     avatar: 'dynamic-avatar-3|svg',
-    name: '克里斯',
+    name: '张世伟',
     date: '1天前',
     desc: `修改了预算<a>80万==>100万</a> `,
   },
